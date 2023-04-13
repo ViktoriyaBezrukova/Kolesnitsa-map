@@ -881,6 +881,38 @@ body::-webkit-scrollbar {
         width: 95px;
         height: 95px;
     }
+
+    .popup {
+        left: 20%;
+    }
+
+    .popup__title,
+    .date__month,
+    .date__time-title {
+        font-size: 18px;
+    }
+
+    .date__time-hour {
+        font-size: 14px;
+    }
+
+    .date {
+        margin-bottom: 12px;
+    }
+
+    .date__item-weekday {
+        font-size: 14px;
+    }
+
+    .date__item-number {
+        font-size: 16px;
+    }
+
+    .date__time-hour {
+        padding: 4px 12px;
+    }
+
+
 }
 
 
@@ -962,6 +994,7 @@ body::-webkit-scrollbar {
         transition: all .3s;
         background-color: #fff;
     }
+
     .sidemenu {
         width: 192px;
         padding-left: 5px;
@@ -998,36 +1031,59 @@ body::-webkit-scrollbar {
         font-size: 14px;
     }
 
-    .dropdown-menu__adress{
+    .dropdown-menu__adress {
         font-size: 13px;
         line-height: 0;
     }
-    .dropdown-menu__choose{
+
+    .dropdown-menu__choose {
         font-size: 14px;
         font-weight: 600;
     }
 
-    .form__title{
+    .form__title {
         font-size: 13px;
         margin-bottom: 10px;
     }
-    
-    .form__top input{
+
+    .form__top input {
         padding: 8px 12px 8px;
         font-size: 11px;
     }
 
-    .form__close-text{
+    .form__close-text {
         font-size: 13px;
     }
 
-    .form__bot input{
+    .form__bot input {
         padding: 8px 12px 8px;
-        font-size: 11px; 
+        font-size: 11px;
     }
 
     .image {
         display: none;
+    }
+
+    .popup {
+        left: 15%;
+    }
+}
+
+@media (max-width: 660px) {
+    .popup {
+        left: 8%;
+        padding: 15px;
+    }
+
+    .date__time {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(7, 1fr);
+    }
+
+    .date__time-hour {
+        padding: 5px 0;
+        width: 80px;
+        row-gap: 10px;
     }
 }
 
@@ -1049,41 +1105,94 @@ body::-webkit-scrollbar {
         font-size: 25px;
     }
 
-    .sidemenu__item{
+    .sidemenu__item {
         font-size: 11px;
         padding: 15px 0;
     }
-    .text__address{
+
+    .text__address {
         font-size: 12px;
     }
-    .sidemenu{
+
+    .sidemenu {
         width: 160px;
     }
 
-    .dropdown-menu{
+    .dropdown-menu {
         width: 159px;
     }
 
-    .form__close-img{
+    .form__close-img {
         height: 13px;
         width: 13px;
     }
 
-    .form__btn{
+    .form__btn {
         padding: 2px;
         max-width: 20px;
     }
 
-    .form__close{
+    .form__close {
         display: block;
     }
 
-    .roll{
+    .roll {
         left: 160px;
     }
 
-    .roll__open{
+    .roll__open {
         transform: translateX(790%);
+    }  
+    .date{
+        flex-wrap: wrap;
+    }
+
+    .popup{
+        width: 316px;
+    }
+    .date__choose::before{
+        display: none;
+    }
+
+    .date__choose::after{
+        display: none;
+    }
+
+    .popup__title, .date__month, .date__time-title{
+        font-size: 13px;
+        margin-bottom: 5px;
+    }
+    .date__time{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .date__item{
+        padding: 4px 8px;
+    }
+    .date__time-hour {
+        padding: 5px 0;
+        width: 50px;
+        row-gap: 2px;
+    }
+
+    .date__item-weekday{
+        font-size: 12px;
+    }
+    .date__item-number{
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .success__title{
+        font-size: 16px;
+    }
+    .popup-success{
+        width: 360px;
+    }
+    .success__text, .success__title, .success__text-time{
+        margin-bottom: 10px;
+    }
+    .success__text-name{
+        font-size: 20px;
     }
 }
 
@@ -1098,42 +1207,66 @@ body::-webkit-scrollbar {
         padding: 8px 9px;
         font-size: 12px;
     }
-    .sidemenu{
+
+    .sidemenu {
         padding-left: 0;
         width: 140px;
     }
-    .text__address{
+
+    .text__address {
         font-size: 11px;
     }
-    .sidemenu__item{
+
+    .sidemenu__item {
         font-size: 11px;
     }
-    .sidemenu__item svg{
+
+    .sidemenu__item svg {
         width: 10px;
     }
-    .item__img{
+
+    .item__img {
         margin-right: 5px;
     }
 
-    .dropdown-menu{
+    .dropdown-menu {
         width: 139px;
     }
-    .dropdown-menu__adress{
+
+    .dropdown-menu__adress {
         font-size: 11px;
     }
-    .dropdown-menu__choose{
+
+    .dropdown-menu__choose {
         font-size: 12px;
     }
 
-    .form__close-text{
+    .form__close-text {
         font-size: 11px;
     }
 
-    .roll{
+    .roll {
         left: 140px;
     }
 
-    .roll__open{
+    .roll__open {
         transform: translateX(650%);
+    }
+
+    .date{
+        margin-bottom: 5px;
+    }
+
+    .success__text{
+        font-size: 16px;
+    }
+    .popup-success{
+        width: 300px;
+    }
+    .success__text-adress{
+        font-size: 16px;
+    }
+    .success__text-thanks{
+        font-size: 16px;
     }
 }

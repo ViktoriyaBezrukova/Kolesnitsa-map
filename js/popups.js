@@ -1,4 +1,3 @@
-
 function sideMenu() {
     let sidemenuItems = document.querySelectorAll('.sidemenu__item');
     let balloonAdress = document.querySelectorAll('.balloon__address');
@@ -48,6 +47,20 @@ function sideMenu() {
 
     inputTime.addEventListener('click', function () {
         popupBg.classList.remove('none')
+        var popup = document.querySelector('.popup-bg');
+        let successPopup = document.querySelector('.popup__success-bg');
+        document.addEventListener('mousedown', function (e) {
+            if (e.target.closest('.popup') === null) {
+                popup.classList.add('none')
+                successPopup.classList.remove('none')
+                document.addEventListener('mousedown', function (e) {
+                    if (e.target.closest('.popup-success') === null) {
+                        let successPopup = document.querySelector('.popup__success-bg');
+                        successPopup.classList.add('none')
+                    }
+                });
+            }
+        });
     })
 }
 
@@ -60,19 +73,12 @@ function popups() {
     let successDate = document.querySelector('.success__text-date');
     let successHour = document.querySelector('.success__text-hours');
     let successClose = document.querySelector('.popup-success__close');
-    let popupSeccess = document.querySelector('.popup__success-bg');
 
     closePopup.addEventListener('click', function () {
         popup.classList.add('none')
         successPopup.classList.remove('none')
     });
 
-    days.forEach(function (elem) {
-        elem.addEventListener('click', function () {
-            successDate.textContent = elem.textContent + ' октября 2022 '
-            console.log(successDate)
-        })
-    })
 
     times.forEach(function (elem) {
         elem.addEventListener('click', function () {
@@ -81,8 +87,16 @@ function popups() {
     })
 
     successClose.addEventListener('click', function () {
-        popupSeccess.classList.add('none')
+        successPopup.classList.add('none')
     })
+    days.forEach(function (elem) {
+        elem.addEventListener('click', function () {
+            successDate.textContent = elem.textContent + '  октября 2022'
+            console.log(successDate)
+        })
+    })
+
+
 
 }
 
